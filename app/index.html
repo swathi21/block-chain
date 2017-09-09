@@ -1,0 +1,56 @@
+<!doctype html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title></title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width">
+    <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.css" />
+    <link rel="stylesheet" href="bower_components/components-font-awesome/css/font-awesome.css" />
+    <link rel="stylesheet" href="styles/main.css">
+    <link rel="stylesheet" href="styles/block_style.css">
+    <link rel="stylesheet" href="styles/appstyle.css">
+    <link rel="stylesheet" href="styles/dashboardDetails.css">
+    <link rel="stylesheet" href="styles/timeline_style.css">
+</head>
+
+<body ng-app="blockChainApp">
+    <div ui-view=""></div>
+    <script>
+        ! function (A, n, g, u, l, a, r) {
+            A.GoogleAnalyticsObject = l, A[l] = A[l] || function () {
+                    (A[l].q = A[l].q || []).push(arguments)
+                }, A[l].l = +new Date, a = n.createElement(g)
+                , r = n.getElementsByTagName(g)[0], a.src = u, r.parentNode.insertBefore(a, r)
+        }(window, document, 'script', 'https://www.google-analytics.com/analytics.js', 'ga');
+        ga('create', 'UA-XXXXX-X');
+        ga('send', 'pageview');
+    </script>
+    
+    <script src="bower_components/jquery/dist/jquery.js"></script>
+    <script src="bower_components/angular/angular.js"></script>
+    <script src="bower_components/bootstrap/dist/js/bootstrap.js"></script>
+    <script src="bower_components/angular-cookies/angular-cookies.js"></script>
+    <script src="bower_components/angular-route/angular-route.js"></script>
+    <script src="bower_components/angular-sanitize/angular-sanitize.js"></script>
+    <script src="bower_components/angular-ui-router/release/angular-ui-router.js"></script>
+    <script src="bower_components/angular-bootstrap/ui-bootstrap-tpls.js"></script>
+    
+    <script src="scripts/app.js"></script>
+    <script src="scripts/routes.js"></script>
+    <script src="scripts/localData.js"></script>
+    <script src="scripts/controllers/loginCtrl.js"></script>
+    <script src="scripts/controllers/dashboard.js"></script>
+    <script src="scripts/controllers/showBlocks.js"></script>
+    <script src="scripts/controllers/dashboardDetailsCtrl.js"></script>
+
+    <script src="scripts/services/userLoginService.js"></script>
+    <script src="scripts/services/dashboardService.js"></script>
+    <script src="scripts/services/showBlockService.js"></script>
+    <script src="scripts/services/dashboardDetailsService.js"></script>
+    <!-- endbuild -->
+    <script src="scripts/ie10-viewport-bug-workaround.js"></script>
+</body>
+
+</html>

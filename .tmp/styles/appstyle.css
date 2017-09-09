@@ -1,0 +1,344 @@
+
+.carousel{
+	margin-top:10px;
+}
+.contentDiv .orange-block:first-child + .tooltip > .tooltip-inner { margin-left:25%;}
+.contentDiv .tooltip:last-child > .tooltip-inner { margin-left:-30%;} 
+.carousel-inner > .item 
+  {
+      width: 90%;
+      margin: auto;
+  }
+  
+.navigation_bar{
+	
+	width: 4%;
+
+}
+
+.info_block_green{
+	
+	width:290px; 
+	height:250px;
+	background-color: #a9a9a9;
+	border-top-style: solid;
+	border-color: rgba(23, 128, 0, 0.8);
+	border-width: 5px;
+	box-shadow: 0px 4px 15px #888888; 
+	
+}
+.info_block_red{
+	
+	width:290px; 
+	height:250px;
+	background-color: #a9a9a9;
+	border-top-style: solid;
+	border-color: red;
+	border-width: 5px;
+	box-shadow: 0px 4px 15px #888888; 
+	
+}
+.carousel_container{
+	height:260px;
+/* 	padding-left: 35px; */
+}
+
+.control-left-arrow{
+	color: grey;
+	float:left;
+}
+
+.control-right-arrow{
+	color: grey;
+	right:0;
+	left:auto;
+}
+
+a.navigation_bar span:hover { 
+    color: black;
+}
+
+.inspection_section {
+	height: 55px;
+	background: #f9f9f9;
+	font-weight: bold;
+    text-align: center;
+    font-size: 14px;
+    padding-top: 6% !important;
+}
+
+.box_header{
+	text-align:center;
+	background: #f9f9f9;
+	font-size: 14px;
+	color:#575757;
+}
+
+.product_data_section{
+	background: #f9f9f9;
+}
+
+.temprature_data_section{
+	background: #f2f2f2;	
+}
+
+.goto_details{
+	background: #8d8d8d;
+	text-align:center;
+	color:#f9f9f9;
+}
+
+
+.box_pro_data_caption{
+	font-size: 14px;
+	font-weight: bold;
+	color:#575757;
+}
+
+.box_pro_data_caption_data{
+	font-size: 14px;
+	color:#3693f8;
+}
+
+.box_temp_data_caption{
+	font-size: 14px;
+	font-weight: bold;
+	color:#575757;
+}
+.box_temp_data_caption_data{
+	font-size: 14px;
+	color:green;
+}
+
+.inspection_container_data {
+       font-weight: normal;
+       color:green;
+}
+
+.logo_container {
+  margin-left: 1%;
+  top:20%;	
+  position: relative;
+  height: 50px;
+  width:50px;
+}
+
+.main_logo_center {
+    position: absolute;
+    margin: auto;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+}
+
+.brand_container{
+	position: absolute;
+    margin: auto;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    margin-left: 130%;
+}
+	
+.left_menu{
+	width:100%;	
+}
+
+.menu_blocks {
+
+}
+
+.menu_dashboard {
+	
+	color:#fff;
+	
+}
+.sidebar_image{
+	margin:10px auto;
+	display:block;
+}
+.sidebar_list a{
+	text-align: center;
+    padding: 0!important;
+}
+.nopadding{
+	padding:0;
+}
+
+li.menu_blocks a{
+	font-size: 13px;
+}
+
+li.menu_blocks a:hover { 
+    background-color: grey;
+}
+
+.dashboard_header{
+	width: 100%;
+    height: 61px;
+    background-image: url('../images/icon/insulin_logo.png');
+    background-repeat: no-repeat;
+}
+
+.dashboard_header_heading{
+	margin-top: 1.5%;
+    font-weight: bold;
+    font-size: 16px;
+}
+
+.dashboard_header_right_action{
+	
+	padding-top: 1%;
+	
+}
+.line_container{
+	width: 85%;
+    margin-left: auto;
+    margin-right: 10%;
+    border-color: #999;
+    border-width: 5px;
+    border-top-style: solid;
+    border-left: 1px solid #999;
+    border-right: 1px solid #999;
+    border-bottom: 1px solid #999;
+
+    height: 150px;
+}
+
+.indexHandler{
+	margin-top:5px;
+} 
+
+.block_chain_header{
+	border-top:1px solid #999;
+	border-bottom:1px solid #999;
+	margin-bottom:15px;
+ 	font-weight: bold;
+    font-size: 16px;
+}
+
+
+
+
+<!-- block sider starts -->
+
+
+
+.mainWrapper01{
+	width: 800px;
+	position:relative;
+	left:20%;
+	top:20%;
+	}
+
+#wrapper{
+    margin-top: -35px;
+    margin-left: 120px;
+    position: absolute;
+    width: 800px;
+    height: 150px;
+    overflow: hidden;
+/*     border: 1px solid red; */
+	}
+	
+#slider{
+	width: 1600px;
+	/* text-align: center; */
+	}
+
+.contentDiv{
+	width: 800px; 
+	float: left;
+	padding-left: 15px;
+	}
+	
+.orange-block{
+	position:relative;
+	top:100px;
+	width: 25px;
+	height: 20px;
+	display: inline-block;
+	background-image: url("../images/icon/block_btm.png");
+	margin-left: 50px;
+	float:left;
+	cursor: pointer;
+    padding: 0% 1%;
+    font-family: GEInspiraPitchBold;
+	}
+	
+.orange-block:hover {
+			border : 2px solid black;
+	}
+.yellow-block{
+	position:relative;
+	top:100px;
+	width: 25px;
+	height: 20px;
+	display: inline-block;
+	background-color: #84acbf;
+	margin-left: 50px;
+	float:left;
+	cursor: pointer;
+    padding: 0% 1%;
+    font-family: GEInspiraPitchBold;
+	}
+	
+.yellow-block:hover {
+			border : 2px solid black;
+	}	
+.triggerSlide{
+/* 	text-align: center; */
+/* 	padding: 5px; */
+/* 	display: inline-block; */
+/* 	width: 100px; */
+/* 	border: 1px solid red; */
+/* 	cursor: pointer; */
+	}
+	
+.block-rule{
+	left: 30px;
+    width: 90%;
+	top: 110px;
+	position: absolute;
+	height: 2px;
+	background-color: rgba(171, 165, 165, 0.53);
+	}
+		
+.block-slide-left{
+	cursor:pointer;
+	display:inline;
+	width: 20px;
+	height:20px;
+    margin-top: 100px;
+    position: absolute;
+	
+}
+
+.block-slide-right{
+	cursor:pointer;
+	right:0px;
+	width: 20px;
+	height:20px;
+    margin-top: 100px;
+    display: inline;
+    position: absolute;
+}
+.details_head{
+	font-family: GEInspiraPitch;
+	color:#575757;
+	font-size:15px;
+}
+.details_status_head_green{
+	font-family: GEInspiraPitch;
+	color:green;
+	font-size:15px;
+}	
+.details_status_head_red{
+	font-family: GEInspiraPitch;
+	color:red;
+	font-size:15px;
+}
+<!-- block sider ends -->
+

@@ -1,0 +1,22 @@
+<div class="sign_container">
+    <form class="form-signin ng-pristine ng-invalid ng-invalid-required" name="login" novalidate="" ng-submit="loginButtonClick();">
+        <div class="form-signin-heading">User Login</div>
+        <div class="row row_custom">
+            <div class="col-md-12">
+                <label for="inputEmail" class="sr-only">Email address</label>
+                <input type="text" id="inputEmail" class="form-control input-adjuster" placeholder="Email address" name="uname" ng-model="username" required autofocus> </div>
+            <div class="col-md-12">
+                <label for="inputPassword" class="sr-only">Password</label>
+                <input type="password" id="inputPassword" class="form-control input-adjuster" placeholder="Password" name="pwd" ng-model="password" required> </div>
+            <div class="col-md-6 ">
+                <div class="fogot-password-container"> <span class="label-fogot-password">Forgot password?</span> </div>
+            </div>
+            <div class="col-md-6 ">
+                <button class="signinbutton btn " type="submit">Submit</button>
+            </div>
+        </div>
+    </form>
+    <div class="spinner-overlay" ng-show="displayLoading">
+        <div class="spinner-area"> <i class="fa fa-spinner fa-spin fa-3x fa-fw"></i> <span class="sr-only">Loading...</span> </div>
+    </div>
+</div>

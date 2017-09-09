@@ -1,0 +1,112 @@
+<div ng-include="'views/header.html'"></div>
+<div class="container-fluid">
+    <div class="row">
+        <div ng-include="'views/side-menu.html'"></div>
+        <div class="col-md-11 main_container">
+            <div class="col-md-11 blk_search">
+                <input type="text" class="form-control blk_border_radius_10 blk_search_background" ng-model="blkNum" ng-change="recentBlocks(blkNum);"    placeholder="Search by Block number"> </div>
+            <div class="col-md-7 blk_margin_top_1">
+                <div class="table-responsive">
+                    <table class="table blk_tbl_bg_white blk_box_shadow">
+                        <thead>
+                            <tr class="blk_tbl_head">
+                                <th colspan="4">Recent Blocks</th>
+                            </tr>
+                            <tr class="blk_tbl_sub_head">
+                                <th class="blk_tbl_th_width_10">Blocks#</th>
+                                <th class="blk_tbl_th_width_35">State Hash</th>
+                                <th class="blk_tbl_th_width_35">Previous Hash</th>
+                                <th class="blk_tbl_th_width_20">Log</th>
+                            </tr>
+                        </thead>
+                    </table>
+                    <div class=" blk_max_hgt_500 blk_oflw_x_auto">
+                        <table class="table blk_tbl_bg_white blk_box_shadow">
+                            <tbody>
+                            <tr ng-repeat="recent in recentResult | orderBy:'-height'">
+                                <td class="blk_td blk_tbl_th_width_10">{{recent.height}}</td>
+                                <td class="blk_contents blk_tbl_th_width_35">{{recent.stateHash | limitTo:20}}...</td>
+                                <td class="blk_contents blk_tbl_th_width_35" ><div class="blk_word_br">{{recent.previousBlockHash | limitTo:20}}...</div></td>
+                                <td class="blk_tbl_th_width_20">
+                                    <button type="submit" class="btn blk_btn_success pull-right btn-block btn-sm" ng-click="toggleModal(recent.height)">View</button>
+                                </td>
+                            </tr>
+                        </tbody>
+                        </table>
+                    </div>
+                </div>
+                <div class="table-responsive form-panel-box text-danger text-center blk_bdr_radius_10" ng-show="recentResult.length==0">
+                        No data available!
+                </div>
+            </div>
+            <div class="col-md-5  blk_margin_top_1">
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="blk_box_primary blk_box_shadow">
+                            <div>
+                                <ul class="list-group list-group-unbordered" ng-show="currenttResult.length!=0">
+                                    <li class="list-group-item"> <img src="images/icon/block_chain.png" />&nbsp;&nbsp;<span class="blk_head">Current State of Blockchain</span> </li>
+                                    <li class="list-group-item blk_padding_10_0">
+                                        <div class="blk_div_hght_30 blk_headings">Height: <span class="blk_span_clr_blue">{{currenttResult.height}}</span></div>
+                                        <div class="blk_current_hash">
+                                            <div class="blk_headings">Current Hash</div>
+                                            <div class="blk_div_color_green">{{currenttResult.currentBlockHash}}</div>
+                                        </div>
+                                        <div class="blk_margin_top_3 blk_headings">Previous Hash</div>
+                                        <div class="blk_word_wrap blk_headings">{{currenttResult.previousBlockHash}}</div>
+                                    </li>
+                                </ul>
+                                <ul class="list-group list-group-unbordered" ng-show="currenttResult.length==0">
+                                    <li class="list-group-item"> <img src="images/icon/block_chain.png" />&nbsp;&nbsp;<span class="blk_head">Current State of Blockchain</span> </li>
+                                    <li class="list-group-item text-danger text-center blk_padding_10_0" >
+                                        No data available!
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="box-default blk_box_shadow">
+                            <div>
+                                <ul class="list-group list-group-unbordered" ng-show="networkResult.length!=0">
+                                    <li class="list-group-item"> <img src="images/icon/network_icon.png" />&nbsp;&nbsp;<span class="blk_head">Network Information</span> </li>
+                                    <li class="list-group-item blk_padding_10_0">
+                                        <div class="blk_div_hght_30 blk_headings">Number of peers connected: <span class="blk_span_clr_blue">{{networkResult.length}}</span></div>
+                                        <div class="blk_current_hash">
+                                            <div class="blk_headings">Current Hash</div>
+                                            <div class="blk_div_color_green">{{currenttResult.currentBlockHash}}</div>
+                                        </div>
+                                        <div class="blk_margin_top_3 blk_headings">Previous Hash</div>
+                                        <div class="blk_word_wrap blk_headings">{{currenttResult.previousBlockHash}}</div>
+                                    </li>
+                                </ul>
+                                <ul class="list-group list-group-unbordered" ng-show="networkResult.length==0">
+                                    <li class="list-group-item"> <img src="images/icon/network_icon.png" />&nbsp;&nbsp;<span class="blk_head">Network Information</span> </li>
+                                    <li class="list-group-item text-danger text-center blk_padding_10_0">
+                                        No data available!
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <modal visible="showModal">
+                <div class="blk_popup_sub_head">Extra Non Hash Date</div>
+                <div class="blk_margin_1"><span class="blk_span_head">Seconds: </span><span class="blk_span_sub_head">{{timestamp.seconds}}</span></div>
+                <div class="blk_margin_1"><span class="blk_span_head">Nanos: </span><span class="blk_span_sub_head">{{timestamp.nanos}}</span></div>
+                <div class="blk_margin_1"><span class="blk_span_head">Consensus Metadata:</span><span class="blk_span_sub_head">{{popupResult.consensusMetadata}}</span></div>
+                <div class="blk_popup_sub_head">Full Hash</div>
+                <div class="blk_margin_1"><span class="blk_span_head">Payload: </span><span class="blk_span_sub_head">{{popupResult.transactions[0].payload}}</span></div>
+                <div class="blk_div_hght_30 blk_margin_1 blk_modal_margin_bot" ><div class="blk_span_head">State Hash: </div><div class="blk_span_sub_head">{{popupResult.stateHash}}</div></div>
+                <div class="blk_div_hght_30 blk_margin_1 blk_modal_margin_bot"><div class="blk_span_head">Previous Hash: </div><div class="blk_span_sub_head">{{popupResult.previousBlockHash}}</div></div>
+            </modal>   
+        </div>
+    </div>
+</div>
+<div ng-include="'views/footer.html'"></div>
+<!-- Footer End -->
+<div class="spinner-overlay" ng-show="displayLoading">
+    <div class="spinner-area">
+        <i class="fa fa-spinner fa-spin fa-3x fa-fw"></i>
+        <span class="sr-only">Loading...</span>
+    </div>
+</div> 

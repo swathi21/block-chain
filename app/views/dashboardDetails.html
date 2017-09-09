@@ -1,0 +1,102 @@
+<div ng-include="'views/header.html'"></div>
+<div class="container-fluid">
+    <div class="row">
+        <div ng-include="'views/side-menu.html'"></div>
+        <div class="col-md-11 main_container">
+            <div class="dashboardDetails-Container">
+                <div class="dashboardDetails-Sub-Container">
+                    <div class="row">
+                        <div class="back-refresh-btn-box">
+                            <a ui-sref="dashboard" ><button type="button" class="btn btn-success">Back</button></a>
+                            <button type="button" class="btn btn-default btn-sm"><img src="images/icon/search.png" /></button>
+                        </div>
+                    </div>
+                    <div class="table-responsive dd_ovflw_hid">
+                        <table class="table table-responsive dashboardDetails-table table-bordered">
+                            <thead>
+                                <tr>
+                                    <th>Product Name</th>
+                                    <th>Shipping Address</th>
+                                    <th>Order Tracking</th>
+                                    <th></th>
+                                </tr>
+                            </thead>
+                            <tbody class="dashboardDetails-table-body " ng-repeat="details in productResult">
+                                <tr>
+                                    <td>
+                                        <p class="orderId_font">{{details.package_id}}</p><img src="images/icon/insulin.png" /> </td>
+                                    <td class="details_head">
+                                        <p>{{details.shipping_address}}</p>
+                                    </td>
+                                    <td>
+                                        <div class="order-tracking-container">
+                                            <div class="stepwizard_none" >
+                                                <div class="dd_div_cont">
+                                                    <div class="dd_div_5">
+                                                        <img src="images/icon/navi_01.png" />
+                                                    </div>
+                                                    <div class="dd_div_10">
+                                                        <img src="images/icon/supplier.png" />
+                                                    </div>
+                                                    <div class="details_span dd_div_33">------------------------------</div>
+                                                    <div class="dd_div_5">
+                                                        <img src="images/icon/navi_02.png" />
+                                                    </div>
+                                                    <div class="dd_div_7">
+                                                        <img src="images/icon/warehouse.png" />
+                                                    </div>
+                                                    <div class="details_span dd_div_36">---------------------------------</div>
+                                                    <div class="dd_flt_lft">
+                                                        <img src="images/icon/navi.png" />
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="stepwizard">
+                                                <div class="stepwizard-row setup-panel">
+                                                    <div class="stepwizard-step">
+                                                        <a href="" type="button" class="btn btn-primary btn-circle dd_a_style"></a>
+                                                        <p>Supplier</p>
+                                                    </div>
+                                                    <div class="stepwizard-step">
+                                                        <a href="" type="button" class="btn btn-primary btn-circle"></a>
+                                                        <p>Warehouse</p>
+                                                    </div>
+                                                    <div class="stepwizard-step">
+                                                        <a href="" type="button" class="btn btn-primary btn-circle dd_a_style_green"></a>
+                                                        <p>Hospital</p>
+                                                    </div>
+                                                </div>
+
+                                            </div>
+                                        </div>
+                                    </td>
+                                    <td><img src="images/icon/upperarrow.png" /></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    
+                    <section id="cd-timeline" class="cd-container">
+                        <div class="cd-timeline-block" ng-repeat="details in detailsResult | orderBy : '-Time':true">
+                            <div class="cd-timeline-img {{imgcls[$index%3]}}">
+                                <img src="images/icon/cd-icon-location.svg">
+                            </div> <!-- cd-timeline-img -->
+                            <div class="cd-timeline-content">
+                                <h2 style="font-weight:bold; margin-top:3px;">Location:  <span style="font-weight:normal;">{{details.location | limitTo:5}} </span> <span class="text-danger">||</span> Event:  <span style="font-weight:normal;">{{details.events}}</span> <span class="text-danger">||</span> Carrier:  <span style="font-weight:normal;">{{details.carrier}}</span> <span class="text-danger">||</span> Contract Status:  <span style="font-weight:normal;">{{details.status}}</span></h2>
+                                <span class="cd-date">{{details.Time}}</span>
+                            </div> <!-- cd-timeline-content -->
+                        </div> <!-- cd-timeline-block -->
+                     </section> <!-- cd-timeline -->
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div ng-include="'views/footer.html'"></div>
+<!-- Footer End -->
+<div class="spinner-overlay" ng-show="displayLoading">
+    <div class="spinner-area">
+        <i class="fa fa-spinner fa-spin fa-3x fa-fw"></i>
+        <span class="sr-only">Loading...</span>
+    </div>
+</div> 
